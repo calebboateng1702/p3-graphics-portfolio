@@ -520,6 +520,8 @@ export default function HomeClient({ projects }) {
           </p>
 
           <form
+            action="https://formspree.io/f/mvzbwkee"
+  method="POST"
             className="mt-10 mx-auto max-w-xl text-left grid gap-4"
             onSubmit={(e) => {
               e.preventDefault();
