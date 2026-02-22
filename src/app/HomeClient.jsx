@@ -1,5 +1,5 @@
 "use client";
-
+import { Analytics } from "@vercel/analytics/next";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 const fadeUp = {
