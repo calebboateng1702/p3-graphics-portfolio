@@ -227,17 +227,17 @@ export default function HomeClient({ projects }) {
 {/* ABOUT CALEB (SEO) */}
 <section className="py-24 px-6 bg-black border-t border-white/5">
   <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 js-reveal">
+    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
       About Caleb Boateng
     </h2>
 
-    <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto js-reveal">
+    <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto">
       Caleb Boateng is a branding and motion designer and the founder of P3 Graphics.
       He specializes in structured brand systems, visual identity development, and
       performance-driven digital design for ambitious startups and growing businesses.
     </p>
 
-    <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto mt-6 js-reveal">
+    <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto mt-6">
       A Communication Design student at KNUST, Caleb approaches branding with discipline,
       hierarchy, and scalable system thinking rather than decoration.
     </p>
