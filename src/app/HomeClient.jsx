@@ -541,15 +541,11 @@ export default function HomeClient({ projects }) {
           
             action="https://formspree.io/f/mvzbwkee"
   method="POST"
-            className="mt-10 mx-auto max-w-xl text-left grid gap-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Inquiry received! Next step: connect to Formspree/Resend for real submissions.");
-            }}
+  className="mt-10 mx-auto max-w-xl text-left grid gap-4"
           >
             <div>
               <label className="text-sm text-gray-300">Name</label>
-              <input
+              <input name="name"
                 className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-orange-500/60"
                 placeholder="Your name"
                 required
@@ -559,6 +555,7 @@ export default function HomeClient({ projects }) {
             <div>
               <label className="text-sm text-gray-300">Email</label>
               <input
+                name="email"
                 type="email"
                 className="mt-2 w-full rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-orange-500/60"
                 placeholder="your@email.com"
@@ -569,6 +566,7 @@ export default function HomeClient({ projects }) {
             <div>
               <label className="text-sm text-gray-300">Project details</label>
               <textarea
+              name="message"
                 className="mt-2 w-full min-h-[140px] rounded-xl border border-white/10 bg-black/30 px-4 py-3 text-white outline-none focus:border-orange-500/60"
                 placeholder="What do you need? Timeline? Budget range?"
                 required
