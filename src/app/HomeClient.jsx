@@ -186,7 +186,7 @@ export default function HomeClient({ projects }) {
           </div>
 
           <div className="mt-10 grid grid-cols-2 sm:grid-cols-4 gap-4 opacity-80">
-            {["Brako Nations", "EmmConsult Agency ", "Naya's Palor", "Fada's Wood"].map((c) => (
+            {["L.B Foundation", "EmmConsult Agency ", "Prempeh Service", "Fada's Wood"].map((c) => (
               <div
                 key={c}
                 className="rounded-xl border border-white/10 bg-black/20 px-4 py-3 text-center text-sm text-gray-300"
@@ -487,7 +487,7 @@ export default function HomeClient({ projects }) {
             {[
               {
                 q: "P3 Graphics delivered a clean identity system that made our brand look premium instantly.",
-                n: "Akwesi Ferro",
+                n: "Akwesi Faro",
                 r: "Founder, fada's Wood",
               },
               {
@@ -497,8 +497,8 @@ export default function HomeClient({ projects }) {
               },
               {
                 q: "The motion graphics elevated our content and improved engagement.",
-                n: "Brako Nations",
-                r: "Content Creator",
+                n: "Prempeh Service",
+                r: "Rental Business ",
               },
             ].map((t, i) => (
               <motion.div
