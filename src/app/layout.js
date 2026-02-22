@@ -4,12 +4,12 @@ export const metadata = {
   metadataBase: new URL("https://p3-graphics-portfolio.vercel.app/"),
   title: "P3 Graphics | Luxury Creative Studio",
   description:
-    "P3 Graphics is a luxury-minimal creative studio crafting premium brand identities, motion systems, and digital design for ambitious businesses.",
+    "Caleb Boateng is a branding and motion designer and founder of P3 Graphics, crafting premium brand identities and digital systems.",
 
   openGraph: {
     title: "P3 Graphics | Luxury Creative Studio",
     description:
-      "Premium brand identities, motion systems, and digital design—built to perform.",
+      "Caleb Boateng is a branding and motion designer and founder of P3 Graphics, crafting premium brand identities and digital systems.",
     url: "/",
     siteName: "P3 Graphics",
     images: [

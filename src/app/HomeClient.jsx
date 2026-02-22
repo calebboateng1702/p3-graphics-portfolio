@@ -103,7 +103,7 @@ export default function HomeClient({ projects }) {
             transition={{ duration: 0.8 }}
             className="text-5xl md:text-7xl font-extrabold tracking-tight"
           >
-            P3 Graphics Creative,
+            P3 Graphics |Luxury,Creative
             <span className="text-orange-500"> Studio.</span>
           </motion.h1>
 
@@ -113,7 +113,7 @@ export default function HomeClient({ projects }) {
             transition={{ delay: 0.25, duration: 0.6 }}
             className="mt-6 mx-auto max-w-2xl text-gray-300"
           >
-            P3 Graphics is a creative studio crafting premium brand identities, digital experiences, and motion systems for startups and ambitious businesses.
+            P3 Graphics, founded by Caleb Boateng is a creative studio crafting premium brand identities, digital experiences, and motion systems for startups and ambitious businesses.
           </motion.p>
 
           <motion.div
@@ -224,7 +224,25 @@ export default function HomeClient({ projects }) {
           </motion.p>
         </div>
       </section>
+{/* ABOUT CALEB (SEO) */}
+<section className="py-24 px-6 bg-black border-t border-white/5">
+  <div className="max-w-4xl mx-auto text-center">
+    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8 js-reveal">
+      About Caleb Boateng
+    </h2>
 
+    <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto js-reveal">
+      Caleb Boateng is a branding and motion designer and the founder of P3 Graphics.
+      He specializes in structured brand systems, visual identity development, and
+      performance-driven digital design for ambitious startups and growing businesses.
+    </p>
+
+    <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto mt-6 js-reveal">
+      A Communication Design student at KNUST, Caleb approaches branding with discipline,
+      hierarchy, and scalable system thinking rather than decoration.
+    </p>
+  </div>
+</section>
       {/* SERVICES */}
       <section id="services" className="py-24 px-6 bg-zinc-950">
         <div className="max-w-6xl mx-auto">
@@ -520,6 +538,7 @@ export default function HomeClient({ projects }) {
           </p>
 
           <form
+          
             action="https://formspree.io/f/mvzbwkee"
   method="POST"
             className="mt-10 mx-auto max-w-xl text-left grid gap-4"
@@ -574,7 +593,7 @@ export default function HomeClient({ projects }) {
       </section>
 
       <footer className="py-10 text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} P3 Graphics Studio
+        © {new Date().getFullYear()} P3 Graphics Studio — Founded by Caleb Boateng
       </footer>
     </main>
   );
