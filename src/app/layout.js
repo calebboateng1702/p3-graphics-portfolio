@@ -1,11 +1,15 @@
 import "./globals.css";
 
 export const metadata = {
-  metadataBase: new URL("https://p3-graphics-portfolio.vercel.app/"),
   title: "P3 Graphics | Luxury Creative Studio",
   description:
-    "Caleb Boateng is a branding and motion designer and founder of P3 Graphics, crafting premium brand identities and digital systems.",
-
+    "P3 Graphics is a luxury-minimal creative studio crafting premium brand identities, digital experiences, and motion systems.",
+  metadataBase: new URL("https://p3-graphics-portfolio.vercel.app"),
+  icons: {
+    icon: "/icon.png",
+    apple: "/apple-icon.png",
+    shortcut: "/favicon.ico",
+  },
   openGraph: {
     title: "P3 Graphics | Luxury Creative Studio",
     description:
@@ -43,4 +47,5 @@ export default function RootLayout({ children }) {
       <body>{children}</body>
     </html>
   );
+  
 }
