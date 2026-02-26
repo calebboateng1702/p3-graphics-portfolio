@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^1.6.1",
+    "flubber": "^0.4.2",
     "framer-motion": "^12.34.0",
     "gray-matter": "^4.0.3",
     "next": "16.1.6",

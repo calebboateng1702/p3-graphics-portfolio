@@ -1,7 +1,9 @@
 "use client";
 import { Analytics } from "@vercel/analytics/next";
 import { motion, useScroll, useSpring, useTransform } from "framer-motion";
-
+import MouseGlow from "@/components/MouseGlow";
+import MorphBlob from "@/components/MorphBlob";
+import Tilt from "@/components/Tilt";
 const fadeUp = {
   hidden: { opacity: 0, y: 18 },
   show: { opacity: 1, y: 0 },
@@ -70,83 +72,65 @@ export default function HomeClient({ projects }) {
         </div>
       </header>
 
+    
       {/* HERO */}
-      <section className="relative min-h-screen flex items-center justify-center px-6 pt-28">
-        {/* soft spotlight */}
-        <div className="pointer-events-none absolute inset-0 overflow-hidden">
-          <div className="absolute left-1/2 top-[38%] h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/10 blur-3xl" />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/0 to-black" />
-        </div>
+{/* HERO */}
+<section className="relative min-h-screen flex items-center justify-center px-6 pt-28">
+  {/* soft spotlight */}
+  <div className="pointer-events-none absolute inset-0 overflow-hidden">
+    <div className="absolute left-1/2 top-[38%] h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-orange-500/10 blur-3xl" />
+    <div className="absolute inset-0 bg-gradient-to-b from-white/0 via-white/0 to-black" />
+  </div>
 
-        <motion.div
-          style={{ y: heroY, opacity: heroOpacity }}
-          className="relative z-10 w-full max-w-4xl text-center"
-        >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            className="mb-7 flex justify-center"
-          >
-            <img
-              src="/logo.png"
-              alt="P3 Graphics Logo"
-              width={92}
-              height={92}
-              style={{ objectFit: "contain" }}
-            />
-          </motion.div>
+  <div className="relative z-10 w-full max-w-4xl text-center">
+    {/* Logo */}
+    <div className="mb-7 flex justify-center">
+      <img
+        src="/logo.png"
+        alt="P3 Graphics Logo"
+        width={92}
+        height={92}
+        style={{ objectFit: "contain" }}
+      />
+    </div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 24 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-extrabold tracking-tight"
-          >
-            P3 Graphics |Luxury,Creative
-            <span className="text-orange-500"> Studio.</span>
-          </motion.h1>
+    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight">
+      Luxury-minimal design,
+      <span className="text-orange-500"> built to perform.</span>
+    </h1>
 
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.25, duration: 0.6 }}
-            className="mt-6 mx-auto max-w-2xl text-gray-300"
-          >
-            P3 Graphics, founded by Caleb Boateng is a creative studio crafting premium brand identities, digital experiences, and motion systems for startups and ambitious businesses.
-          </motion.p>
+    <p className="mt-6 mx-auto max-w-2xl text-gray-300">
+      P3 Graphics is a creative studio crafting premium brand identities, digital
+      experiences, and motion systems for startups and ambitious businesses.
+    </p>
 
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.45, duration: 0.6 }}
-            className="mt-10 flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <a
-              href="#work"
-              className="px-8 py-4 rounded-2xl bg-orange-500 text-black font-semibold hover:opacity-90 transition"
-            >
-              View Work
-            </a>
-            <a
-              href="#contact"
-              className="px-8 py-4 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 transition"
-            >
-              Request a Quote
-            </a>
-          </motion.div>
+    <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
+      <a
+        href="#work"
+        className="px-8 py-4 rounded-2xl bg-orange-500 text-black font-semibold hover:opacity-90 transition"
+      >
+        View Work
+      </a>
+      <a
+        href="#contact"
+        className="px-8 py-4 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 transition"
+      >
+        Request a Quote
+      </a>
+    </div>
 
-          {/* scroll hint */}
-          <div className="mt-14 flex justify-center">
-            <div className="flex flex-col items-center gap-2 text-xs text-gray-400">
-              <span>Scroll</span>
-              <span className="h-8 w-[2px] rounded-full bg-white/20 overflow-hidden">
-                <span className="block h-1/2 w-full bg-orange-500/70 animate-pulse" />
-              </span>
-            </div>
-          </div>
-        </motion.div>
-      </section>
+    {/* scroll hint */}
+    <div className="mt-14 flex justify-center">
+      <div className="flex flex-col items-center gap-2 text-xs text-gray-400">
+        <span>Scroll</span>
+        <span className="h-8 w-[2px] rounded-full bg-white/20 overflow-hidden">
+          <span className="block h-1/2 w-full bg-orange-500/70 animate-pulse" />
+        </span>
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* TRUST + STATS */}
       <motion.section
@@ -225,22 +209,70 @@ export default function HomeClient({ projects }) {
         </div>
       </section>
 {/* ABOUT CALEB (SEO) */}
-<section className="py-24 px-6 bg-black border-t border-white/5">
-  <div className="max-w-4xl mx-auto text-center">
-    <h2 className="text-3xl md:text-4xl font-bold tracking-tight mb-8">
-      About Caleb Boateng
-    </h2>
+{/* ABOUT CALEB (Founder section) */}
+<section className="py-24 px-6 border-t border-white/5">
+  <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-14 items-center">
+    
+    {/* LEFT — IMAGE */}
+    <div className="flex justify-center md:justify-start">
+      <Tilt max={10}>
+        <img
+          src="/caleb.png"
+          alt="Caleb Boateng"
+          className="w-[320px] md:w-[520px] object-contain"
+        />
+      </Tilt>
+    </div>
 
-    <p className="text-gray-300 leading-relaxed max-w-2xl mx-auto">
-      Caleb Boateng is a branding and motion designer and the founder of P3 Graphics.
-      He specializes in structured brand systems, visual identity development, and
-      performance-driven digital design for ambitious startups and growing businesses.
-    </p>
+    {/* RIGHT — TEXT */}
+    <div>
+      <h2 className="text-3xl md:text-4xl font-bold tracking-tight">
+        About Caleb Boateng
+      </h2>
 
-    <p className="text-gray-400 leading-relaxed max-w-2xl mx-auto mt-6">
-      A Communication Design student at KNUST, Caleb approaches branding with discipline,
-      hierarchy, and scalable system thinking rather than decoration.
-    </p>
+      <p className="mt-5 text-gray-300 leading-relaxed">
+        Caleb Boateng is a branding and motion designer and the founder of P3 Graphics.
+        He builds structured brand systems—identity, hierarchy, and scalable design
+        assets—for ambitious businesses.
+      </p>
+
+      <p className="mt-4 text-gray-400 leading-relaxed">
+        A Communication Design student at KNUST, Caleb approaches branding with system
+        thinking rather than decoration.
+      </p>
+
+      {/* Mini bullets = “precision” vibe */}
+      <div className="mt-8 grid grid-cols-2 gap-3">
+        {[
+          "Brand identity systems",
+          "Logo design + guidelines",
+          "Social design systems",
+          "Motion promos + logo animation",
+        ].map((t) => (
+          <div
+            key={t}
+            className="rounded-2xl border border-white/10 bg-white/5 px-4 py-3 text-sm text-gray-200"
+          >
+            {t}
+          </div>
+        ))}
+      </div>
+
+      <div className="mt-10 flex gap-4">
+        <a
+          href="#work"
+          className="px-6 py-3 rounded-2xl bg-orange-500 text-black font-semibold hover:opacity-90 transition"
+        >
+          See Work
+        </a>
+        <a
+          href="#contact"
+          className="px-6 py-3 rounded-2xl border border-white/15 bg-white/5 hover:bg-white/10 transition"
+        >
+          Contact
+        </a>
+      </div>
+    </div>
   </div>
 </section>
       {/* SERVICES */}
