@@ -354,14 +354,14 @@ export default function HomeClient({ projects }) {
         </a>
       </div>
 
-      <div className="grid md:grid-cols-3 gap-6">
+      <div className="grid md:grid-cols-2 gap-6">
         {projects.map((p) => (
           <a
             key={p.slug}
             href={`/projects/${p.slug}`}
             className="relative h-72 rounded-2xl overflow-hidden group border border-white/10 bg-zinc-900"
           >
-            {/* Optional hover teaser */}
+            {/* hover teaser */}
             <video
               src={p.teaserVideo}
               autoPlay
