@@ -8,20 +8,32 @@ const PATHS = [
   "M405,324Q383,398,307,420Q231,442,171,402Q111,362,92,292Q73,222,105,163Q137,104,199,83Q261,62,322,77Q383,92,405,160Q427,228,414,276Q401,324,405,324Z",
 ];
 
-export default function MorphBlob() {
+export default function MorphBlob({
+  className = "h-full w-full",
+  fill = "rgba(249,115,22,0.14)",
+}) {
   const reduce = useReducedMotion();
 
   return (
-    <svg viewBox="0 0 500 500" className="h-full w-full">
+    <svg
+      viewBox="0 0 500 500"
+      className={className}
+      aria-hidden="true"
+      preserveAspectRatio="xMidYMid meet"
+    >
       <motion.path
         d={PATHS[0]}
         animate={reduce ? { d: PATHS[0] } : { d: PATHS }}
         transition={
           reduce
             ? undefined
-            : { duration: 12, repeat: Infinity, ease: "easeInOut" }
+            : {
+                duration: 12,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }
         }
-        fill="rgba(249,115,22,0.16)"
+        fill={fill}
       />
     </svg>
   );

@@ -13,24 +13,33 @@ export default function Reveal({ children }) {
       window.matchMedia &&
       window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-    const els = Array.from(root.querySelectorAll(".js-reveal"));
+    const elements = Array.from(root.querySelectorAll(".js-reveal"));
+
+    if (!elements.length) return;
 
     if (reducedMotion) {
-      els.forEach((el) => el.classList.add("is-visible"));
+      elements.forEach((el) => el.classList.add("is-visible"));
       return;
     }
 
-    const io = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) e.target.classList.add("is-visible");
-        }
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -10% 0px" }
+      {
+        threshold: 0.12,
+        rootMargin: "0px 0px -10% 0px",
+      }
     );
 
-    els.forEach((el) => io.observe(el));
-    return () => io.disconnect();
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
   }, []);
 
   return <div ref={rootRef}>{children}</div>;

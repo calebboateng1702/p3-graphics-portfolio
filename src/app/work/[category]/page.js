@@ -3,8 +3,31 @@ import Gallery from "@/components/Gallery";
 import { graphicItems } from "@/lib/gallery-graphic";
 import { motionItems } from "@/lib/gallery-motion";
 
+export async function generateMetadata({ params }) {
+  const { category } = await params;
+
+  if (category === "graphic-design") {
+    return {
+      title: "Graphic Design | P3 Graphics",
+      description:
+        "Curated graphic design work from P3 Graphics, including logos, posters, layouts, and brand visuals.",
+    };
+  }
+
+  if (category === "motion") {
+    return {
+      title: "Motion | P3 Graphics",
+      description:
+        "Motion design work from P3 Graphics, including logo reveals, promos, and short-form brand visuals.",
+    };
+  }
+
+  return {
+    title: "Work | P3 Graphics",
+  };
+}
+
 export default async function WorkCategoryPage({ params }) {
-  // Next.js can provide params as a Promise in some versions
   const { category } = await params;
 
   if (category === "graphic-design") {
@@ -27,5 +50,5 @@ export default async function WorkCategoryPage({ params }) {
     );
   }
 
-  return notFound();
+  notFound();
 }
